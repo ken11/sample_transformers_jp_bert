@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  app:
+    build: .
+    volumes:
+      - .:/nlp
+      - model_cache:/root/.cache/huggingface/transformers/:cached
+
+volumes:
+  model_cache:
+    driver: local
